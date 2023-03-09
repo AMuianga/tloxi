@@ -7,5 +7,5 @@ class Config:
     SECRET_KEY="Pr3t@B0a"
     #SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')\
-        or 'sqlite:///' + os.path.join(basedir, 'codeplus.db')
+        or 'sqlite:///' + os.path.join(basedir, 'xava/codeplus.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False

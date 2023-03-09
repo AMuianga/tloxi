@@ -16,6 +16,6 @@ pip install flask
 pip install flask_sqlalchemy
 pip install WTForms
 pip install bcrypt
-pip install email_validators
-pip install 
+pip install email_validator
+pip install wtf
 
