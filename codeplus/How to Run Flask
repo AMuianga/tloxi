@@ -1,0 +1,21 @@
+export SECRET_KEY="Pr3t@B0a"
+
+sudo apt install python3-venv
+python3 -m venv a
+
+source a/bin/activate
+export FLASK_APP=xava
+export FLASK_DEBUG=1
+flask run
+
+flask run -h localhost -p 5001
+
+
+pip install datetime
+pip install flask
+pip install flask_sqlalchemy
+pip install WTForms
+pip install bcrypt
+pip install email_validators
+pip install 
+

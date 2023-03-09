@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}{% block content %}
+<div class="container">
+    {% from "_formhelpers.html" import render_field %}
+    <form method="POST" enctype="multipart/form-data">
+        {{form.hidden_tag()}}
+        <div>
+            <legend class="border-bottom mb-4 text-center">Login Now</legend>
+
+            {% if form.email.errors %}
+            {{render_field(form.email, class="form-control form-control-md is-invalid")}}
+            <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{render_field(form.email, class="form-control form-control-md")}}
+            {% endif %}
+
+            {% if form.password.errors %}
+            {{render_field(form.password, class="form-control form-control-md is-invalid")}}
+            <div class="invalid-feedback">
+                {% for error in form.password.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{render_field(form.password, class="form-control form-control-md")}}
+            {% endif %}
+
+            <div class="form-check">
+                {{form.remember(class="form-check-input")}}
+                {{form.remember.label(class="form-check-label")}}
+
+            </div>
+
+        </div>
+
+
+        <div class="mt-2">
+            {{form.submit(class="btn btn-dark")}}
+        </div>
+
+        <small class="text-muted ml-2">
+            <a href="#">Forgot Password?</a>
+        </small>
+
+    </form>
+</div>
+<div class="border-top pt-3 mt-2">
+    <small class="text-muted">
+        Need an account?
+        <a href="{{ url_for('auth.register') }}" class="ml-2">Sign Up Now</a>
+    </small>
+</div>
+{% endblock %}
